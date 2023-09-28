@@ -36,6 +36,12 @@ public class Module3Servlet extends HttpServlet {
 
         out.println("</table>");
 
+        out.println("""
+                <a href="%s"><- Предыдущий модуль</a>
+                """.formatted(request.getContextPath() + "/module2"));
+        out.println("""
+                <a href="%s">Следующий модуль -></a>
+                """.formatted(request.getContextPath() + "/module4"));
 
         out.println("</body></html>");
     }

@@ -6,6 +6,8 @@ import by.javaguru.git.mergeexperience.topics.Module1Topics;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
+import static java.lang.String.*;
+
 @WebServlet("/module1")
 public class Module1Servlet extends HttpServlet {
     private String message;
@@ -31,7 +33,9 @@ public class Module1Servlet extends HttpServlet {
                     + "</td></tr>");
 
         out.println("</table>");
-
+        out.println("""
+                <a href="%s">Следующий модуль -></a>
+                """.formatted(request.getContextPath() + "/module2"));
         out.println("</body></html>");
     }
 
