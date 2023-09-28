@@ -33,9 +33,11 @@ public class Module1Servlet extends HttpServlet {
                     + "</td></tr>");
 
         out.println("</table>");
+
+        String linkToImg = request.getContextPath() + "/images/arrow-right.png";
         out.println("""
-                <a href="%s">Следующий модуль -></a>
-                """.formatted(request.getContextPath() + "/module2"));
+                <a href="%s">Следующий модуль <img src="%s" alt="" width="16" height="16"></a>
+                """.formatted(request.getContextPath() + "/module2", linkToImg));
         out.println("</body></html>");
     }
 
